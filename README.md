@@ -1,19 +1,27 @@
-ROM - A dead-simple Redis Mapper
-=================================
+ROM - A dead-simple Redis Object Mapper
+=======================================
 
 A super flexible Redis Object Mapper. It's all about model method DRY-ness.
 
-You can easily override the Model object by subclassing it.
 
-    var AwesomeModel = db.Model.extend({
-        // Awesome stuff here
+    var Database = require('rom');
+    var db = new Database();
+
+    var User = db.Model.extend('user', {
+        hello: function() {
+            return "Hello, " + this.get('name') + "!";
+        }
     });
-
-    var User = AwesomeModel.extend();  // We now use the AwesomeModel
+    
+    var user = new User({name: "Jesse"});
+    user.hello();  // Hello, Jesse!
 
 Usage
 -----
 
+###Import
+
+    var Database = require('rom');
 
 ###Create database instance
 
@@ -63,6 +71,22 @@ Usage
     user.destroy(function(err, res) {
         // res becomes 1/0 if the deletion is successful.
     });
+
+Overriding
+----------
+
+You can easily override the Model object by subclassing it.
+
+    var Database = require('rom');
+
+    var db = new Database();
+
+    var AwesomeModel = db.Model.extend({
+        // Awesome stuff here
+    });
+
+    var User = AwesomeModel.extend();  // We now use the AwesomeModel
+
 
 TODO
 ----
