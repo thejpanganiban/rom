@@ -1,0 +1,16 @@
+{
+  "name": "rom",
+  "version": "0.1.0",
+  "author": "Jesse Panganiban <me@jpanganiban.com>",
+  "description": "A dead-simple Redis Object Mapper.",
+  "main": "./lib/db.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpanganiban/rom.git"
+  },
+  "dependencies": {
+    "redis": "0.8.x"
+  },
+  "license": "MIT",
+  "engines": ">=0.8"
+}
