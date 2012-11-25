@@ -1,6 +1,6 @@
 {
   "name": "rom",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Jesse Panganiban <me@jpanganiban.com>",
   "description": "A dead-simple Redis Object Mapper.",
   "main": "./lib/db.js",
