@@ -5,7 +5,10 @@ A super flexible Redis Object Mapper. It's all about model method DRY-ness.
 
 
     var Database = require('rom');
-    var db = new Database();
+    var redisClient = require('redis').createClient();
+
+    // Use any redis or hiredis! Awesome!
+    var db = new Database('myDatabase', redisClient);
 
     var User = db.Model.extend('user', {
         hello: function() {
@@ -22,11 +25,11 @@ Usage
 ###Import
 
     var Database = require('rom');
+    var client = require('redis').createClient();  // or hiredis
 
 ###Create database instance
 
-    var db = new Database();  // You can pass an object so you can override
-                                 the host/port.
+    var db = new Database('myDatabase', client);  // Database name and redis client.
 
 ###Define a model
 

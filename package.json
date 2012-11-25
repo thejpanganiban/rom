@@ -8,9 +8,6 @@
     "type": "git",
     "url": "https://github.com/jpanganiban/rom.git"
   },
-  "dependencies": {
-    "redis": "0.8.x"
-  },
   "license": "MIT",
   "engines": ">=0.8"
 }
