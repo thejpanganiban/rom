@@ -59,6 +59,23 @@ Usage
     // Alternatively, you can get the local current state.
     user.save();
 
+###Defaults
+
+    var User = db.Model.extend('user', {
+        defaults: {
+            first_name: "Mr",
+            last_name: "Awesome"
+        },
+        hello: function() {
+            return "Hello, " + this.get('first_name') + " " + this.get('last_name') + "!"
+        }
+    });
+
+    var user = new User({first_name: "Badong"});
+
+    user.hello();
+    // "Hello, Badong Awesome!"
+
 ###Getters
 
     user.get('name');  // Returns "Jesse"
