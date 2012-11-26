@@ -10,6 +10,10 @@ A super flexible Redis Object Mapper. It's all about model method DRY-ness.
     // Use redis or hiredis! Awesome!
     var db = rom.createDatabase('myDatabase', redisClient);
 
+    // Or you can just.. This automatically picks up your current
+    // redis and creates a client. Also names the database 'default'.
+    var db = rom.createDatabase();
+
     var User = db.Model.extend('user', {
         hello: function() {
             return "Hello, " + this.get('name') + "!";
