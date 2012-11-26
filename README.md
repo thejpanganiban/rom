@@ -4,11 +4,11 @@ ROM - A dead-simple Redis Object Mapper
 A super flexible Redis Object Mapper. It's all about model method DRY-ness.
 
 
-    var Database = require('rom');
+    var rom = require('rom');
     var redisClient = require('redis').createClient();
 
-    // Use any redis or hiredis! Awesome!
-    var db = new Database('myDatabase', redisClient);
+    // Use redis or hiredis! Awesome!
+    var db = rom.createDatabase('myDatabase', redisClient);
 
     var User = db.Model.extend('user', {
         hello: function() {
@@ -24,12 +24,12 @@ Usage
 
 ###Import
 
-    var Database = require('rom');
+    var rom = require('rom');
     var client = require('redis').createClient();  // or hiredis
 
 ###Create database instance
 
-    var db = new Database('myDatabase', client);  // Database name and redis client.
+    var db = rom.createDatabase('myDatabase', client);  // Database name and redis client.
 
 ###Define a model
 
@@ -80,11 +80,11 @@ Overriding
 
 You can easily override the Model object by subclassing it.
 
-    var Database = require('rom');
+    var rom = require('rom');
 
-    var db = new Database();
+    var db = rom.createDatabase('myDatabase');
 
-    var AwesomeModel = db.Model.extend({
+    var AwesomeModel = db.Model.extend('awesomeBase', {
         // Awesome stuff here
     });
 
