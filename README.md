@@ -98,6 +98,7 @@ You can easily override the Model object by subclassing it.
 TODO
 ----
 
-1. Tests!
-2. More documentation.
-3. More methods.
+1. Write Tests
+2. Query by attribute
+3. Advanced queries
+4. Application-level Map Reduce
