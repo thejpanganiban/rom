@@ -25,19 +25,19 @@ var rom = {
 
   /**
    *
-   * Convinience property for accessing the Database object
+   * Convenience property for accessing the Database object
    */
   Database: Database,
 
   /**
    *
-   * Convinience property for accessing the Model object
+   * Convenience property for accessing the Model object
    */
   Model: Model,
 
   /**
    *
-   * Convinience property for accessing the utility library
+   * Convenience property for accessing the utility library
    */
   utils: utils
 };
